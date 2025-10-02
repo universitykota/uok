@@ -1,0 +1,24 @@
+*{margin:0; padding:0}
+ body{
+	 background-image: url(myimages/bg.jpg);
+	 background-attachment: fixed;
+}
+.button{background:#D8E9FE;
+	    color:#000066; 
+		height:30px; 
+		font-size:16px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:580;
+		border:#000033;
+		border-bottom-color:#FF0000;
+		border-top:#FF0000;
+	  }
+.button2{background:#D8E9FE;
+	    color:#000066; 
+		font-size:14px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:580;
+		border:#000033;
+		border-bottom-color:#FF0000;
+		border-top:#FF0000;
+	  }  

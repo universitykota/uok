@@ -1,0 +1,248 @@
+<html><head>
+<script language="javascript" src="mousedisable.js"></script>
+<script language="javascript" src="selectdata.js"></script>
+	<link rel="stylesheet" type="text/css" href="default.css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><style type="text/css">
+<!--
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style>
+<script language="javascript">
+
+	 function proceedToResult() {
+    const clscode = document.getElementById("clscode").value;
+    if (clscode === "999") {
+        alert("Please Select Class for Result");
+        return false;
+    }
+
+    // Extract display name from selected option
+    const selectedText = document.getElementById("clscode").options[document.getElementById("clscode").selectedIndex].text;
+
+    // Store in localStorage (or pass via querystring)
+    localStorage.setItem("selectedClass", selectedText);
+
+    // Navigate
+    window.location.href = "../result.html";
+}
+
+	function displayClass()
+	{		
+	
+		document.getElementById("txtHint").innerHTML = "<img src='images/wait.gif'>";
+		exyear  = document.getElementById("exyear").value;
+		restype  = document.getElementById("restype").value;
+		ugpgx    = document.getElementById("ugpg").value;
+		ugpg     = ugpgx+"@"+restype+"@"+exyear;
+		showclass(ugpg,1,0,"txtHint");		
+	}
+
+	function opFile()
+	{
+		restype = document.getElementById("restype").value;
+		ugpg    = document.getElementById("ugpg").value;
+		clscode = document.getElementById("clscode").value;
+		exyear = document.getElementById("exyear").value;
+	    if(exyear=="999")
+		  {
+		    alert("Please Select Result Year");
+			return false;
+		  }
+
+	    if(restype=="999")
+		  {
+		    alert("Please Select Result Type");
+			return false;
+		  }
+		 if(ugpg=="999")
+		  {
+		    alert("Please Select UG/PG/Other Courses");
+			return false;
+		  }
+		 if(clscode=="999")
+		  {
+		    alert("Please Select Class for Result");
+			return false;
+		  }
+		document.f1.action="getForMResUlt.php";
+		document.f1.submit();
+	}
+	
+</script>
+</head>
+	
+<body>
+	<center>
+	<table width="75%" border="1" bordercolor="#003366" cellpadding="0">
+	<tbody><tr>
+	<td align="center" bgcolor="#FFFFFF" valign="middle">
+		<table width="100%" border="1" bordercolor="#000033" style="border-collapse:collapse" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td>
+				<style type="text/css">
+<!--
+.style1 {
+	color: #666666;
+	font-weight: bold;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<title>WELCOME TO UOK</title>
+<table width="100%" style=" border-collapse:collapse" ;="" cellpadding="0" cellspacing="0" border="1" bordercolor="#000033">
+		<tbody><tr>
+			<td align="center" bgcolor="#FFFFFF" valign="middle">
+				<table width="100%">
+					<tbody><tr>
+						<td width="14%" align="center">
+							<img src="../uoklogo.png" width="100" height="100">				
+						</td>
+						<td align="center" valign="middle" width="86%" bgcolor="#003366">
+							<font face="verdana" size="5" color="#FFFFFF">
+								<b>UNIVERSITY OF KOTA, KOTA</b>					
+							</font>				
+						</td>
+					</tr>
+				</tbody></table>
+ 	
+			</td>
+		</tr>
+		</tbody></table>
+		<b>
+		<font face="verdana" size="2" color="#0066FF"><b>For Best View Use Internet Explorer 6.0. Do Not Use Google Chrome.</b></font>
+		<form name="f1" id="f1" method="post">
+		<input type="hidden" name="opflag" id="opflag" value="">
+		<input type="hidden" name="flag" id="flag" value="">
+	 	<input type="hidden" name="exptext" id="exptext" value="1W2I1N2K1R1x1X1U2L2B1a1z2A1c2K1R1x2M2B"><input type="hidden" name="count" id="count" value="25">		
+			<table width="100%" height="197" style="border-collapse:collapse" border="0">
+			<tbody><tr>
+				<td height="31" colspan="4" align="center">&nbsp;</td>
+			</tr>
+			<tr style="background-color:003366">
+				<td height="31" colspan="4" align="center">
+					<font face="verdana" color="#FFFFFF" size="3">
+						<b>
+							Class Selection Panel
+							</b></font>				</td>
+			</tr>
+			 <tr>
+				<td width="3%" height="38" align="right">&nbsp;</td>
+				<td width="38%" align="left"><font face="verdana" size="2"><b>Select Result Year</b></font></td>
+			  	<td width="58%"><select name="exyear" id="exyear">
+                <option value="999" style="background:#FFFFCC;font-size:9px"> &lt;-- Select --&gt;</option>								
+                <option value="2020" style="background:#FFFFCC;font-size:9px"> 2020</option>				
+				<option value="2021" style="background:#FFFFCC;font-size:9px"> 2021</option>
+				<option value="2022" style="background:#FFFFCC;font-size:9px"> 2022</option>
+				<option value="2023" style="background:#FFFFCC;font-size:9px"> 2023</option>
+				<option value="2024" style="background:#FFFFCC;font-size:9px"> 2024</option>
+				<option value="2025" style="background:#FFFFCC;font-size:9px"> 2025</option>
+					
+					
+						                							
+              </select></td>
+			</tr>
+			<tr>
+				<td width="3%" height="38" align="right">&nbsp;</td>
+				<td width="38%" align="left"><font face="verdana" size="2"><b>Select Result Type</b></font></td>
+			  	<td width="58%"><select name="restype" id="restype">
+                <option value="999" style="background:#FFFFCC;font-size:9px"> &lt;-- Select --&gt;</option>								
+                <option value="0" style="background:#FFFFCC;font-size:9px"> Main</option>				
+				<option value="1" style="background:#FFFFCC;font-size:9px"> Revaluation</option>	
+				<option value="2" style="background:#FFFFCC;font-size:9px"> Supplementary</option>                							
+              </select></td>
+			</tr>
+		 	 
+			<tr>
+				<td width="3%" height="38" align="right">&nbsp;</td>
+				<td width="38%" align="left"><font face="verdana" size="2"><b>Select UG/PG/Other Courses </b></font></td>
+			  <td width="58%"><select name="ugpg" id="ugpg" >
+                <option value="999" style="background:#FFFFCC;font-size:9px"> &lt;-- Select --&gt;</option>
+					
+				
+								<!--<option value="MPHIL" style='background:#FFFFCC;font-size:9px'> MPHIL</option>
+
+				<option value="SEM2" style='background:#FFFFCC;font-size:9px'> Semester II</option>
+
+				<option value="SEM4" style='background:#FFFFCC;font-size:9px'> Semester IV</option>
+
+				<option value="SEM6" style='background:#FFFFCC;font-size:9px'> Semester VI</option>-->
+                <option value="PG" style="background:#FFFFCC;font-size:9px"> PG</option>	
+                <option value="UG" style="background:#FFFFCC;font-size:9px"> UG </option>	
+				<option value="SEM1" style="background:#FFFFCC;font-size:9px"> Semester I</option>		
+				<option value="SEM2" style="background:#FFFFCC;font-size:9px"> Semester II</option>				
+				<option value="SEM3" style="background:#FFFFCC;font-size:9px"> Semester III</option>				
+				<option value="SEM4" style="background:#FFFFCC;font-size:9px"> Semester IV</option>
+				<option value="SEM5" style="background:#FFFFCC;font-size:9px"> Semester V</option>
+				<option value="SEM6" style="background:#FFFFCC;font-size:9px"> Semester VI</option>
+				<option value="SEM7" style="background:#FFFFCC;font-size:9px"> Semester VII</option>
+				<option value="SEM8" style="background:#FFFFCC;font-size:9px"> Semester VIII</option>
+				<option value="SEM9" style="background:#FFFFCC;font-size:9px"> Semester IX</option>
+				<option value="SEM10" style="background:#FFFFCC;font-size:9px"> Semester X</option>
+                <option value="PROF" style="background:#FFFFCC;font-size:9px"> Professional Courses</option>								
+               <!-- <option value="EDU" style='background:#FFFFCC;font-size:9px'> EDUCATION</option>	
+				<option value="LLB" style='background:#FFFFCC;font-size:9px'> LLB</option>							
+-->
+
+				
+
+
+              </select></td>
+			</tr>
+			<tr>
+				<td height="36" align="right">&nbsp;</td>
+				<td align="left">
+					<font face="verdana" size="2"><b>Select Class for Result </b></font>				</td>
+				<td colspan="2" align="left">
+					<div id="txtHint">	
+						<select name="clscode" id="clscode">
+                                    <option value="999">&lt;-- Select --&gt;</option>
+                                    <option value="51081">51081 - B.SC. PART-I EXAM.2021</option>
+                                    <option value="51091">51091 - B.COM. PART-I EXAM.2021</option>
+                                    <option value="51092">51092 - B.COM. PART-II EXAM.2021</option>
+                                    <option value="51093">51093 - B.SC. PART-II EXAM.2021</option>
+                                    <option value="51105">51105 - B.A. ADDL. EXAM-2021</option>
+                                    <option value="A1P">A1P - B.A. PART-I EXAM.2021</option>
+                                    <option value="A2P">A2P - B.A. PART-II EXAM.2021</option>
+                                    <option value="A3P">A3P - B.A. PART-III EXAM.2021</option>
+                                </select>
+					</div>				</td>
+			</tr>
+			
+			
+			<tr height="90">
+			  <td colspan="4" align="center">			
+			  <input type="button" name="send" id="send" style="background:#003366; color:#FFFFFF; border-color:#FFFFFF;cursor:pointer" value=" Proceed for Result" onclick="proceedToResult()">	
+			  
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			</td>
+			  </tr>	
+			  <tr height="90">
+			  <td colspan="4" align="center">&nbsp;
+			  
+			  </td>
+			  </tr>			
+			</tbody></table>
+		</form>
+			</b></td>
+			</tr>			
+	  </tbody></table>
+
+	
+
+</td></tr></tbody></table></center></body></html>
